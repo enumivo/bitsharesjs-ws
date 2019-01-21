@@ -2,7 +2,7 @@ import assert from "assert";
 import {Apis} from "../lib";
 
 var coreAsset;
-var default_api = "wss://eu.nodes.bitshares.ws";
+var default_api = "wss://dex.eidos.one";
 
 describe("Connection", () => {
 
@@ -12,36 +12,11 @@ describe("Connection", () => {
         })
     });
 
-    // it("Connect to localhost", function() {
-    //     return new Promise( function(resolve) {
-    //         Apis.instance("ws://localhost:8090").init_promise.then(function (result) {
-    //             coreAsset = result[0].network.core_asset;
-    //
-    //             if (typeof coreAsset === "string") {
-    //                 resolve();
-    //             } else {
-    //                 reject(new Error("Expected coreAsset to be a string"));
-    //             }
-    //         });
-    //     });
-    // });
-
-
     it("Connect to Mainnet", function() {
         return new Promise( function(resolve, reject) {
             Apis.instance(default_api, true).init_promise.then(function (result) {
                 coreAsset = result[0].network.core_asset;
-                assert(coreAsset === "BTS");
-                resolve();
-            }).catch(reject)
-        });
-    });
-
-    it("Connect to Testnet", function() {
-        return new Promise( function(resolve, reject) {
-            Apis.instance("wss://node.testnet.bitshares.eu", true).init_promise.then(function (result) {
-                coreAsset = result[0].network.core_asset;
-                assert(coreAsset === "TEST");
+                assert(coreAsset === "EON");
                 resolve();
             }).catch(reject)
         });
@@ -63,7 +38,7 @@ describe("Connection", () => {
         return new Promise( function(resolve, reject) {
             Apis.instance(default_api, true).init_promise.then(function (result) {
                 coreAsset = result[0].network.core_asset;
-                assert(coreAsset === "BTS");
+                assert(coreAsset === "EON");
                 Apis.instance().close().then(function() {
                     resolve();
                 }).catch(reject)
@@ -72,27 +47,3 @@ describe("Connection", () => {
     });
 });
 
-describe("Connection reset", () => {
-    afterEach(function() {
-        return new Promise(function(res) {
-            Apis.close().then(res);
-        })
-    });
-
-    it("Resets between chains", function() {
-        return new Promise( function(resolve, reject) {
-            Apis.instance(default_api, true).init_promise.then(function (result) {
-                coreAsset = result[0].network.core_asset;
-                assert(coreAsset === "BTS");
-                Apis.reset("wss://node.testnet.bitshares.eu", true).then(instance => {
-                    instance.init_promise.then(function (result) {
-                        coreAsset = result[0].network.core_asset;
-                        assert(coreAsset === "TEST");
-                        resolve();
-                    }).catch(reject)
-                })
-
-            });
-        });
-    });
-});
