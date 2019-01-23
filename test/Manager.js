@@ -10,9 +10,9 @@ var faultyNodeList = [
     {url: "wss://bit.btzadazdsabc.org/ws", location: "Hong Kong"},
     {url: "ws://127.0.0.1:8091", location: "Hangzhou, China"},
     {url: "wss://bitshares.openledger.info/ws", location: "Nuremberg, Germany"},
-    {url: "wss://secure.freedomledger.com/ws", location: "Toronto, Canada"},
+    {url: "wss://dex.eidos.one", location: "Main"},
     {url: "wss://node.testnet.bitshares.eu", location: "Public Testnet Server (Frankfurt, Germany)"},
-    {url: "ws://dex.eidos.one:11011", location: "Berlin, Germany"}
+    {url: "ws://dex.eidos.one:8090", location: "Main"}
 ];
 
 var noWorkingNodes = [
@@ -27,7 +27,7 @@ var noWorkingNodes = [
 ];
 
 var goodNodeList = [
-    {url: "ws://dex.eidos.one:11011", location: "Berlin, Germany"}
+    {url: "wss://dex.eidos.one", location: "Main"}
 ];
 
 var fullNodeList = [
@@ -36,7 +36,7 @@ var fullNodeList = [
         location: {translate: "settings.api_closest"}
     },
     {url: "ws://127.0.0.1:8090", location: "Locally hosted"},
-    {url: "ws://dex.eidos.one:11011", location: "Berlin, Germany"}
+    {url: "wss://dex.eidos.one", location: "Main"}
 ]
 
 
@@ -186,7 +186,7 @@ describe("Connection Manager", function() {
 
     it("Checks connections for url and urls", function() {
         this.timeout(20000);
-        let man = new Manager({url: "wss://eu.nodes.bitshares.ws", urls: ["wss://bts.open.icowallet.net/ws"]});
+        let man = new Manager({url: "wss://dex.eidos.one:8090", urls: ["wss://dex.eidos.one"]});
         return new Promise( function(resolve, reject) {
             man.checkConnections().then((latencies => {
                 assert.equal(Object.keys(latencies).length, 2);
