@@ -1,7 +1,7 @@
 import assert from "assert";
 import { Manager, Apis } from "../lib";
 
-var defaultUrl = "ws://dex.eidos.one:11011";
+var defaultUrl = "wss://dex.eidos.one";
 
 var faultyNodeList = [
     {url: "wss://bitsqsdqsdhares.openledger.info/ws", location: "Nuremberg, Germany"},
@@ -59,7 +59,7 @@ describe("Connection Manager", function() {
     });
 
     it("Instantiates with crypto api", function() {
-        let man = new Manager({url: "ws://dex.eidos.one:11011", urls: [], optionalApis: {enableCrypto: true}});
+        let man = new Manager({url: "wss://dex.eidos.one", urls: [], optionalApis: {enableCrypto: true}});
         return new Promise( function(resolve, reject) {
             man.connect().then(() => {
                 assert(!!Apis.instance().crypto_api());
@@ -69,7 +69,7 @@ describe("Connection Manager", function() {
     });
 
     it("Instantiates with orders api", function() {
-        let man = new Manager({url: "ws://dex.eidos.one:11011", urls: [], optionalApis: {enableCrypto: true, enableOrders: true}});
+        let man = new Manager({url: "wss://dex.eidos.one", urls: [], optionalApis: {enableCrypto: true, enableOrders: true}});
         return new Promise( function(resolve, reject) {
             man.connect().then(() => {
                 assert(!!Apis.instance().orders_api());

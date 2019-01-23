@@ -2,7 +2,7 @@ import assert from "assert";
 import {Apis} from "../lib";
 
 var coreAsset;
-var default_api = "ws://dex.eidos.one:11011";
+var default_api = "wss://dex.eidos.one";
 
 describe("Api", () => {
 
