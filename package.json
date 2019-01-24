@@ -6,7 +6,7 @@
     "ws": false
   },
   "scripts": {
-    "test": "BABEL_ENV=test mocha --timeout 10000 --compilers js:babel-core/register --recursive",
+    "test": "BABEL_ENV=test mocha --compilers js:babel-core/register --recursive",
     "test:watch": "npm test -- --watch",
     "test:connection": "BABEL_ENV=test mocha --compilers js:babel-core/register ./test/Connection --watch",
     "test:api": "BABEL_ENV=test mocha --compilers js:babel-core/register ./test/Api --watch",
