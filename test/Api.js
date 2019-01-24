@@ -41,7 +41,7 @@ describe("Api", () => {
         it("Market subscription", function() {
             return new Promise( function(resolve) {
                 Apis.instance().db_api().exec( "subscribe_to_market", [
-                    callback, "1.3.0", "1.3.19"
+                    callback, "1.3.0", "1.3.1"
                 ] ).then(function(sub) {
                     if (sub === null) {
                         resolve();
@@ -60,11 +60,11 @@ describe("Api", () => {
             this.timeout(10000);
             return new Promise( function(resolve) {
                 Apis.instance().db_api().exec( "subscribe_to_market", [
-                    callback, "1.3.0", "1.3.19"
+                    callback, "1.3.0", "1.3.1"
                 ] ).then(function() {
 
                     Apis.instance().db_api().exec("unsubscribe_from_market", [
-                        callback, "1.3.0", "1.3.19"
+                        callback, "1.3.0", "1.3.1"
                     ]).then(function(unsub) {
                         if (unsub === null) {
                             resolve();
