@@ -1,6 +1,6 @@
 {
   "name": "eidosjs-ws",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Pure JavaScript Eidos websocket interface for node.js and browsers.",
   "browser": {
     "ws": false
