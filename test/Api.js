@@ -271,7 +271,7 @@ describe("Api", () => {
                 if (coreAsset !== "EON") {
                     reject(new Error("This test will only work when connected to a EON api"));
                 }
-                Apis.instance().history_api().exec("get_fill_order_history", ["1.3.121", "1.3.0", 10])
+                Apis.instance().history_api().exec("get_fill_order_history", ["1.3.1", "1.3.0", 10])
                 .then(function(history) {
                     if (history.length > 0) {
                         resolve();
@@ -287,7 +287,7 @@ describe("Api", () => {
                 if (coreAsset !== "EON") {
                     reject(new Error("This test will only work when connected to a EON api"));
                 }
-                Apis.history.get_fill_order_history("1.3.121", "1.3.0", 10)
+                Apis.history.get_fill_order_history("1.3.1", "1.3.0", 10)
                 .then(function(history) {
                     if (history.length > 0) {
                         resolve();
