@@ -186,7 +186,7 @@ describe("Connection Manager", function() {
 
     it("Checks connections for url and urls", function() {
         this.timeout(20000);
-        let man = new Manager({url: "wss://dex.eidos.one:8090", urls: ["wss://dex.eidos.one"]});
+        let man = new Manager({url: "ws://dex.eidos.one:11011", urls: ["wss://dex.eidos.one"]});
         return new Promise( function(resolve, reject) {
             man.checkConnections().then((latencies => {
                 assert.equal(Object.keys(latencies).length, 2);
@@ -194,17 +194,5 @@ describe("Connection Manager", function() {
             })).catch(reject);
         });
     });
-
-    // it("Throws an error if an API fails to initialize", function() {
-    //     this.timeout(5000);
-    //     let man = new Manager({url: failedInitNodes[0].url, urls: []});
-    //     return new Promise(function(resolve, reject) {
-    //         man.connect(undefined, undefined, true).then(function(res) {
-    //             reject();
-    //         }).catch(function(err) {
-    //             resolve();
-    //         });
-    //     });
-    // });
 
 });
