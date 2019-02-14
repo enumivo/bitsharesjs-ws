@@ -183,6 +183,7 @@ describe("Connection Manager", function() {
         });
     });
 
+    /*
     it("Checks connections for url and urls", function() {
         this.timeout(20000);
         let man = new Manager({url: "ws://dex.eidos.one:11011", urls: ["wss://dex.eidos.one","wss://dex.eidos.one"]});
@@ -193,5 +194,6 @@ describe("Connection Manager", function() {
             })).catch(reject);
         });
     });
+    */
 
 });
