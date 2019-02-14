@@ -9,9 +9,9 @@ var faultyNodeList = [
     {url: "wss://bitshaazdzares.openledger.info/ws", location: "Nuremberg, Germany"},
     {url: "wss://bit.btzadazdsabc.org/ws", location: "Hong Kong"},
     {url: "ws://127.0.0.1:8091", location: "Hangzhou, China"},
-    {url: "wss://bitshares.openledger.info/ws", location: "Nuremberg, Germany"},
+    {url: "wss://dex1.eidos.one", location: "Nuremberg, Germany"},
     {url: "wss://dex.eidos.one", location: "Main"},
-    {url: "wss://node.testnet.bitshares.eu", location: "Public Testnet Server (Frankfurt, Germany)"},
+    {url: "wss://dex2.eidos.one", location: "Public Testnet Server (Frankfurt, Germany)"},
     {url: "ws://dex.eidos.one:8090", location: "Main"}
 ];
 
@@ -22,8 +22,7 @@ var noWorkingNodes = [
     {url: "wss://bit.btzadazdsabc.org/ws", location: "Hong Kong"},
     {url: "ws://127.23230.0.1:8091", location: "Hangzhou, China"},
     {url: "wss://bitshasdares.dacplay.org:8089/ws", location:  "Hangzhou, China"},
-    {url: "wss://secuasdre.freedomledger.com/ws", location: "Toronto, Canada"},
-    {url: "wss://testnet.bitshares.eu/wqsdsqs", location: "Public Testnet Server (Frankfurt, Germany)"}
+    {url: "wss://secuasdre.freedomledger.com/ws", location: "Toronto, Canada"}
 ];
 
 var goodNodeList = [
