@@ -91,7 +91,7 @@ describe("Connection Manager", function() {
         let man = new Manager({url: "ws://127.0.0.1:8092", urls: faultyNodeList.map(a => a.url)});
         return new Promise( function(resolve, reject) {
             man.connectWithFallback().then(function() {
-                assert.equal(man.url, "wss://bitshares.openledger.info/ws");
+                assert.equal(man.url, "wss://dex.eidos.one");
                 resolve();
             })
             .catch(reject)
